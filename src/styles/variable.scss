@@ -1,0 +1,105 @@
+//Loader
+$loader-width: 250px;
+$loader-dot-size: 20px;
+
+// Colors
+$black: #000000;
+$light_grey: #F2EAEA;
+$white: #FFFFFF;
+
+$dark_blue: #07554D;
+$blue: #219C90;
+$light_blue: #9DD3CE;
+$yellow: #E9B824;
+$light_yellow: #FFDE79;
+$dark_orange: #E98100;
+$orange: #EE9322;
+$light_orange: #FFDAAC;
+$red: #D83F31;
+$light_red: #E2B0AB;
+
+// Shadow
+$flipped_card: 0px 6px 13px 0px rgba(0, 0, 0, 0.10), 0px 24px 24px 0px rgba(0, 0, 0, 0.09), 0px 54px 32px 0px rgba(0, 0, 0, 0.05), 0px 95px 38px 0px rgba(0, 0, 0, 0.01), 0px 149px 42px 0px rgba(0, 0, 0, 0.00), 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+// Font
+$poppins_font: "Poppins", sans-serif;
+
+// Font-size
+$display_large: 4.8em;
+$display: 4.25em;
+$title_large: 3.125em;
+$title_primary: 2.8em;
+$title_secondary: 2.5em;
+$body_large: 1.85em;
+$body: 1.5em;
+$body_small: 1em;
+$caption: .875em;
+$small_caption: .6em;
+
+//Font-weight
+$normal: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$extrabold: 800;
+
+// Calc
+$calc_font: calc(1vw + .6rem);
+
+// Logo Image
+$logo_image_width: clamp(2rem, #{calc(1vw + .8rem)}, 4rem);
+$logo_gap: clamp(.5rem,#{calc(1vw + .5rem)}, 2rem);
+
+// Filled Button
+@mixin filled__button($name, $padding, $bg_color, $text_color, $border_radius, $font_size, $font_weight) {
+    #{$name} {
+        padding: $padding;
+        background-color: $bg_color;
+        color: $text_color;
+        border-radius: $border_radius;
+        border: none;
+        font-size: $font_size;
+        font-weight: $font_weight;
+        width: fit-content;
+        min-height: 44px;
+        cursor: pointer;
+    }
+}
+
+@mixin textInput($name, $bg_color, $text_color, $font_size) {
+    #{$name} {
+        background-color: $bg_color;
+        color: $text_color;
+        font-size: $font_size;
+    }
+}
+
+@mixin textInputContainer($name, $inputName, $bg_color, $text_color, $border_color) {
+    #{$name} {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: .5em;
+        border-bottom: 1px solid rgba($border_color, .7);
+        @include textInput($inputName, $bg_color, $text_color, $caption);
+    }
+}
+
+@mixin textInputField($name) {
+    #{$name} {
+        width: 100%;
+        min-height: 44px;
+        border: none;
+        font-family: $poppins_font;
+
+        &::placeholder {
+            color: rgba($white, .7);
+        }
+
+        &:focus {
+            padding-inline-start: 1.2em;
+            outline: 2px solid $orange;
+        }
+    }
+}
+

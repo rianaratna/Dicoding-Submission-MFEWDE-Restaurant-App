@@ -1,0 +1,28 @@
+//Like Button
+.like {
+    min-width: 44px !important;
+    min-height: 44px !important;
+    position: absolute;
+    right: calc(15% / 2);
+    margin-top: clamp(20px, #{calc(2vw + 1rem)}, 50px);
+    background-color: $white;
+    cursor: default;;
+    border-radius: .8em;
+    border: 0;
+    padding: .5em;
+
+    :hover {
+        opacity: .8;
+    }
+
+    span {
+        font-size: clamp($title_secondary, #{calc(2vw + 2rem)}, $display) !important;
+        color: red;
+    }
+}
+
+// Favourite Container
+.favouriteSection {
+    margin-top: clamp(2em, #{calc(2vw + 1em)}, 5em);
+    padding-inline: calc(15% / 2);
+}

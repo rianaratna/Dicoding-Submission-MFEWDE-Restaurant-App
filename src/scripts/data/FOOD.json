@@ -1,0 +1,64 @@
+{
+    "foods": [
+        {
+            "id": 1,
+            "name": "Soto Medan",
+            "description": "Soto Medan is Medan style chicken soup. It is made of chicken thighs, kaffir lime leaves, bay leaves and a blend of spices like cinnamon, cardamom, cloves etc.",
+            "image": "https://images.unsplash.com/photo-1677029969063-23ecbb98d0af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1887&q=80"
+        },
+        {
+            "id": 2,
+            "name": "Bika Ambon",
+            "description": "This is a very typical dessert eaten in Medan. It is made from ingredients such as tapioca flour, eggs, sugar, yeast and coconut milk.",
+            "image": "https://cdn.idntimes.com/content-images/community/2021/01/fromandroid-bce44a3308ea3357c8f5754197c2fd16.jpg"
+        },
+        {
+            "id": 3,
+            "name": "Kwetiau Goreng Medan",
+            "description": "This delicious dish is made with rice noodles, sausage lapchong, fish meatballs, shrimp, eggs, sprouts and various condiments.",
+            "image": "https://img-global.cpcdn.com/recipes/e0ef98867787a8ac/680x482cq70/kwetiau-goreng-medan-telur-bebek-mie-kuetiau-foto-resep-utama.jpg"
+        },
+        {
+            "id": 4,
+            "name": "Bihun Bebek",
+            "description": "This is vermicelli and duck soup, which is quite refreshing and rich in flavour and aroma. The main ingredients are a duck, onion flakes, garlic flakes, ginger, star anise, ground white pepper etc.",
+            "image": "https://th.bing.com/th/id/OIP.s9vmcYPBYiudm8lz1yMTDQHaHa?pid=ImgDet&rs=1"
+        },
+        {
+            "id": 5,
+            "name": "Durian Pancake",
+            "description": "This food is a popular snack and enjoyed widely. These are pancakes filled with cream while keeping the Durian flavour dominant by adding a lot of durian meat",
+            "image": "https://th.bing.com/th/id/R.270abae55b6fd353f241d76306c55fb6?rik=%2bRxROmH%2bEVc5iw&riu=http%3a%2f%2f2.bp.blogspot.com%2f-0GY5L8f5DiM%2fTu4ZWhtVxNI%2fAAAAAAAAAZY%2f2Qh9uYqfJHo%2fw1200-h630-p-k-no-nu%2fpancake%2bdurian.jpg&ehk=VOZyAmgLYmySfmBdcHdg2hB2nAGVzE%2fK6DgQdkYSuA4%3d&risl=&pid=ImgRaw&r=0"
+        },
+        {
+            "id": 6,
+            "name": "Tahu Sumedang",
+            "description": "This is deep-fried tofu and is served with spicy cabai rawit (bird’s eye chillies). It has a creamy inside, and the taste is savoury. It works excellent with lontong, sambal also.",
+            "image": "https://cdn.idntimes.com/content-images/community/2019/12/74797333-542110323274286-8157494286295741274-n-b54ed79f2b1cd7e417c721f536a1d039.jpg"
+        },
+        {
+            "id": 7,
+            "name": "Sate Padang",
+            "description": "This food is meat skewer with thick gravy and spicy sauce. The meat is tender, delicious and will melt in your mouth. The gravy is aromatic and spicy, making a perfect combo with meat.",
+            "image": "https://s3.us-east-1.wasabisys.com/agendaindonesia/2020/11/Sate-Padang-shutterstock.jpg"
+        },
+        {
+            "id": 8,
+            "name": "Mie Aceh",
+            "description": "Mie Aceh is a curried, spicy noodle dish. There are two variations of the noodles: fried and boiled. It is topped with seafood, beef or chicken depending upon your palate.",
+            "image": "https://assets.pikiran-rakyat.com/crop/0x0:0x0/x/photo/2021/11/02/3111261266.jpg"
+        },
+        {
+            "id": 9,
+            "name": "Teh Susu Telur",
+            "description": "This beverage is trendy in Medan and its speciality. It is made with tea mixed with condensed milk, sugar and egg. It is served hot and sold in many Warungs and cafe.",
+            "image": "https://images.genpi.co/uploads/data/images/Ririn/Talua%20cookpad.jpg"
+        },
+        {
+            "id": 10,
+            "name": "Es Jagung Medan",
+            "description": "This drink is made of corn, coconut milk, sugar, corn starch, salt and water. It is served cold, and jelly is usually added to make it more delicious and exciting.",
+            "image": "https://www.holidify.com/images/cmsuploads/compressed/Grass_jelly_es_cincau_hijau_20190722150207.jpg"
+        }
+    ]
+}

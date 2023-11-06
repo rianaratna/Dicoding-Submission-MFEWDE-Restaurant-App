@@ -1,0 +1,212 @@
+header {
+    width: 100%;
+    display: inline;
+}
+
+// App bar
+app-bar {
+    width: 100%;
+    display: grid;
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    // background-color: transparent;
+    transition: background-color 300ms linear;
+    
+    &.scroll {
+        background-color: $black !important;
+    }
+
+    .hero {
+        padding: 1.5rem calc(15% / 2) 1.5rem;
+        display: flex;
+        flex-direction: column;
+
+        .logoContainer {
+            min-height: 44px;
+            display: flex;
+            gap: $logo_gap;
+            align-items: center;
+            justify-content: center;
+            color: $white;
+
+            .appName {
+                font-size: clamp(1em, #{calc(1vw + .5rem)}, $small_caption);
+            }
+
+            img {
+                width: clamp(1.5em, #{calc(1vw + 1rem)}, 2em);
+            }
+        }
+
+        #hamburger {
+            position: absolute;
+            text-decoration: none;
+            color: $white;
+
+            span {
+                color: $white;
+            }
+        }
+    }
+
+    .navigationMenu {
+        position: absolute;
+        display: flex;
+        top: 0;
+        left: 0;
+        padding: 2rem calc(15% / 2) 2rem;
+        width: 100vw;
+        height: 100vh;
+        overflow-y: hidden;
+        z-index: 999;
+        background-color: $white;
+        -webkit-transform: translateX(-100vw);
+        transform: translateX(-100vw);
+        transition: transform 300ms ease-in;
+
+        &.open {
+            -webkit-transform: translateX(0);
+            transform: translateX(0);
+        }
+
+        .closeButton {
+            position: absolute;
+            order: 1;
+        }
+
+        .navList {
+            order: 2;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+
+            li {
+                text-align: center;
+                list-style-type: none;
+                width: 100%;
+                padding: 3em;
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-transform: uppercase;
+                    min-width: 44px !important;
+                    min-height: 44px !important;
+                    font-size: clamp($caption, #{$calc_font}, $body);
+                    text-decoration: none;
+                    color: $black;
+                    margin-left: 0;
+                    transition: all 300ms ease;
+
+                    &:focus {
+                        margin-left: 3rem;
+                        color: $orange;
+                        font-weight: $semibold;
+                    }
+                }
+
+                &:nth-child(2) {
+                    border-top: 1px solid rgba($black, .2);
+                    border-bottom: 1px solid rgba($black, .2);
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 500px) {
+        #hamburger, .closeButton {
+            display: none !important;
+        }
+
+        &.scroll {
+            box-shadow: 0 5px 15px rgba(0,0,0,.5);
+        }
+
+        .hero {
+            padding-bottom: 0;
+        }
+
+        .navigationMenu {
+            position: relative;
+            transform: translateX(0) !important;
+            height: fit-content !important;
+            background: none !important;
+            padding: 0;
+            
+            .navList {
+                flex-direction: row !important;
+
+                li {
+                    border: none !important;
+                    padding: 0;
+
+                    a {
+                        color: $white !important;
+                        font-size: clamp($small_caption, #{calc(1vw + .4rem)}, $caption) !important;
+                        
+                        &:hover {
+                            margin-left: 0;
+                            background-color: rgba($black, .5);
+                            color: $orange !important;
+                            padding: .5em 1.5em;
+                            border-radius: .5em;
+                        }
+
+                        &:focus {
+                            margin-left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 700px) {
+        display: flex;
+        padding: .5em calc(15% / 2) !important;
+        align-items: center;
+        justify-content: space-between;
+
+        > * {
+            padding: 0 !important;
+        }
+
+        .logoContainer {
+            width: max-content !important;
+
+            img {
+                width: clamp(1.3em, #{calc(1vw + 1.2rem)}, 2em) !important;
+            }
+
+            .appName {
+                font-size: clamp(.7em, #{calc(1vw + 1rem)}, $caption) !important;
+            }
+        }
+
+        .navigationMenu {
+
+            .navList {
+                display: flex;
+                justify-content: flex-end;
+                gap: clamp(4em, #{calc(4vw + 2rem)}, 8em);
+
+                li {
+                    width: fit-content;
+
+                    a:hover {
+                        border-radius: 1em !important;
+                        background: none !important;
+                        padding: 0 !important;
+                    }
+
+                    a:focus {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+}

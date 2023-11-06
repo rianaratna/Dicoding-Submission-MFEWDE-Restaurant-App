@@ -1,0 +1,344 @@
+restaurant-detail {
+    .restaurant {
+        &Img {
+            width: 100%;
+        }
+    }
+
+    .detailContainer {
+        padding-bottom: clamp(1em, #{calc(3vw + 2rem)}, 5em);
+        background-color: $light_grey;
+        border-radius: 2em 2em 0rem 0rem;
+        margin-top: clamp(-35px, #{calc(1vw + 1rem)}, -2em);
+        position: relative;
+
+        > * {
+            padding-inline: calc(15% / 2);
+        }
+
+        .titleContainer {
+            padding-top: clamp(1em, #{calc(3vw + 2rem)}, 5em);
+            background-color: $orange;
+            border-radius: 2em 2em 0 0;
+
+            .restaurant{
+                &City {
+                    font-size: clamp($caption, #{calc(1vw + .5rem)}, $title_secondary);
+                    font-weight: $medium;
+                    color: black;
+                    padding:.62rem 1.88rem;
+                    background-color: $yellow;
+                    border-radius: .7em;
+                    width: fit-content;
+                }
+
+                &Name {
+                    margin-top: clamp(1rem, #{calc(1vw + 1rem)}, 2.5rem);
+                    font-weight: $bold;
+                    font-size: clamp($body, #{calc(3vw + 1em)}, $title_large);
+                }
+            }
+        }
+
+        .aboutRestaurant {
+            margin-top: -1px;
+            display: grid;
+            gap: 2em;
+            background-color: $orange;
+            padding-block-start: 2em;
+            padding-block-end: clamp(1em, #{calc(3vw + 2rem)}, 5em);
+
+            .ratingAndAddress {
+                display: flex;
+                gap: 1.5em;
+
+                .restaurant {
+                    &Rating,
+                    &Address {
+                        display: flex;
+                        gap: .6em;
+
+                        h2, 
+                        h3 {
+                            font-size: clamp(16px, #{calc(1vw + .7rem)}, $body);
+                        }
+
+                        h3 {
+                            font-weight: $normal;
+                            font-size: clamp(14px, #{calc(1vw + .7rem)}, $body_small);
+                        }
+
+                        .starIcon {
+                            color: $red;
+                        }
+
+                        .locationIcon {
+                            color: $dark_blue;
+                        }
+
+                        .starIcon,
+                        .locationIcon {
+                            font-size: clamp($title_secondary, #{calc(1vw + 1rem)}, $display);
+
+                            @media screen and (max-width: 399px) {
+                                font-size: clamp($body_large, #{calc(1vw + 1rem)}, $display);
+                            }
+                        }
+                    }
+                }
+            }
+
+            .restaurantDesc {
+                margin-top: clamp(.5rem, #{calc(1vw + .5rem)}, 2rem);
+                font-size: clamp(14px, #{calc(1vw + .7rem)}, $body_small);
+            }
+        }
+
+        .restaurantMenu {
+            display: flex;
+            flex-direction: column;
+            gap: clamp(1rem, #{calc(1vw + .8rem)}, 2.2rem);
+            padding-block-start: clamp(1em, #{calc(3vw + 2rem)}, 5em);
+
+            .tabButton {
+                display: flex;
+                gap: 2em;
+
+                .foodsCategory,
+                .drinksCategory {
+                    border: 0;
+                    background-color: transparent;
+                    font-family: $poppins_font;
+                    border-bottom: 3px solid transparent;
+                    font-size: clamp(14px, #{calc(1vw + .7rem)}, $body_small);
+                    text-decoration: none;
+                    color: $black;
+                    opacity: .7;
+                    font-weight: $normal;
+
+                    &.clicked {
+                        border-bottom: 3px solid $orange;
+                        opacity: 1;
+                        font-weight: $bold;
+                        transition: border-bottom 250ms ease-in;
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+
+                    &:hover {
+                        opacity: .5;
+                    }
+                }
+
+                .rectangleToFill {
+                    width: 100%;
+                    height: 20px;
+                    background-color: $orange;
+                }
+            }
+
+            .menuItemContainer {
+                .foodItemContainer,
+                .drinkItemContainer {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: .8em;
+
+                    .foodItemList,
+                    .drinkItemList {
+                        display: flex;
+                        align-items: center;
+                        gap: clamp(.5em, #{calc(1vw + .5rem)}, 1.2em);
+                        height: 4em;
+                        padding-inline: clamp(.5em, #{calc(1vw + .5rem)}, 1.5em);
+                        border-radius: .8em;
+                        background-color: $white;
+
+                        .foodIcon,
+                        .drinkIcon {
+                            width: 2em;
+                        }
+
+                        .foodItemName,
+                        .drinkItemName {
+                            display: inline-block;
+                            font-size: clamp(12px, #{calc(1vw + .5rem)}, $body_small);
+                            font-weight: $normal;
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+
+                // .drinkItemContainer {
+                //     display: none;
+                // }
+            }
+        }
+
+        .restaurantReviews {
+            padding-block-start: clamp(1em, #{calc(3vw + 2rem)}, 5em);
+
+            > * + * {
+                margin-top: clamp(1rem, #{calc(1vw + 1rem)}, 2.5rem);
+            }
+
+            .addReview {
+                margin-top: clamp(1rem, #{calc(1vw + 1rem)}, 2.5rem);
+                padding: clamp(1.2rem,calc(1vw + 1rem), 2.2rem);
+                border-radius: .7em;
+                background-color: $white;
+
+                &SubTitle {
+                    font-size: clamp(11px, #{calc(1vw + .5rem)}, $caption);
+                    font-weight: $normal;
+                    opacity: .8;
+                }
+
+                &Title {
+                    font-size: clamp(1rem, #{calc(1vw + .7rem)}, $body_large) !important;
+                    color: $dark_orange;
+                }
+
+                &Form {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    margin-top: clamp(0.7rem,calc(1vw + 0.7rem),1.5rem);
+                    gap: clamp(.7rem, #{calc(1vw + .7rem)}, 1.5rem);
+
+                    .addNameSection,
+                    .addReviewSection {
+                        display: flex;
+
+                        #review {
+                            font-family: $poppins_font;
+                        }
+
+                        input::placeholder,
+                        textarea::placeholder {
+                            color: rgba($black, .7);
+                        }
+
+                        textarea {
+                            padding: 1em 0;
+                        }
+                    }
+
+                    @include textInputContainer(
+                        '.addNameSection',
+                        '#name',
+                        transparent,
+                        $black,
+                        $black
+                    );
+
+                    @include textInputContainer(
+                        '.addReviewSection',
+                        '#review',
+                        transparent,
+                        $black,
+                        $black
+                    );
+
+                    span {
+                        opacity: .7;
+                    }
+
+                    .submitReview {
+                        width: 100%;
+                        margin-top: .6rem;
+                    }
+                }
+            }
+
+            .others {            
+                &ReviewContainer {
+                    display: grid;
+                    gap: clamp(1rem, #{calc(1vw + 1rem)}, 2.5rem);
+                }
+
+                &ReviewList {
+                    padding: clamp(1.2rem,calc(1vw + 1rem), 2.2rem);
+                    border-radius: .7em;
+                    background-color: $white;
+                }
+
+                &Info {
+                    display: flex;
+                    align-items: center;
+                    gap: clamp(.5em, #{calc(1vw + .5rem)}, 1.2em);
+                    margin-bottom: clamp(1rem, #{calc(1vw + .5rem)}, 1.88rem);
+
+                    .othersProfilePic {
+                        width: 1.5em;
+                        height: 1.5em;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 100px;
+                        background-color: $blue;
+                        color: $white;
+                    }
+
+                    .othersName {
+                        font-size: clamp(1.25rem, #{calc(1vw + .7rem)}, 2.25rem);
+                    }
+                }
+
+                &Review {
+                    font-size: clamp(14px, #{calc(1vw + .7rem)}, $body_small);
+                    margin-bottom: clamp(.2rem, #{calc(1vw + .2rem)}, .8rem);
+                    word-break: break-all;
+                    white-space: pre-wrap;
+                }
+
+                &ReviewDate {
+                    font-size: $caption;
+                    font-weight: $normal;
+                    opacity: .7;
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 600px) {
+        .addReviewForm {
+            grid-template-columns: 1fr 2fr !important;
+
+            .submitReview {
+                grid-column-start: 1;
+                grid-column-end: 3;
+            }
+        }
+    }
+    @media screen and (min-width: 800px) {
+        .aboutRestaurant {
+            grid-template-columns: 1fr 2fr;
+
+            .ratingAndAddress {
+                flex-direction: column;
+                margin-block: auto;
+            }
+        }
+
+        .foodItemContainer,
+        .drinkItemContainer {
+            grid-template-columns: 1fr 1fr 1fr !important;
+        }
+
+        .addReviewForm {
+            grid-template-columns: 1fr 2fr .8fr !important;
+
+            .submitReview {
+                width: fit-content;
+                grid-column-start: 3;
+            }
+        }
+
+        .othersReviewContainer {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+}

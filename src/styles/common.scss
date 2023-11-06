@@ -1,0 +1,168 @@
+// Common Setting
+
+*,
+*::before, 
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: $poppins_font;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    @media screen and (min-width: 1200px) {
+        // max-width: 1200px;   
+        margin: 0 auto;
+    }
+}
+
+rec-food-list,
+restaurant-list {
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 3em;
+    padding-inline: calc(15% / 2);
+}
+
+.secondaryTitle {
+    font-size: clamp($body, #{calc(3vw + 1em)}, $title_primary);
+
+    @media screen and (min-width: 700px) {
+        width: 90%;
+    }
+}
+
+.filledIconButton span {
+    background-color: var(--bg-color, rgba($white, .7));
+    border-radius: 100px;
+    box-shadow: 0 0 15px rgba(0,0,0,.3);
+    min-width: 44px !important;
+    min-height: 44px !important;
+    font-size: $title_secondary !important;
+    text-align: center;
+}
+
+@include filled__button(
+    '.textButton', 
+    .8em, 
+    var(--btn_bg_color, $red),
+    var(--btn_txt_color, $white),
+    .5em,
+    $caption,
+    $semibold
+);
+
+.textButton:hover {
+    opacity: .8;
+}
+
+.material-symbols-rounded {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+.material-symbols-sharp {
+    font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+
+.iconButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    min-width: 44px !important;
+    min-height: 44px !important;
+
+    span {
+        color: $black;
+        font-size: clamp($body_large, #{calc(2vw + 1rem)}, $title_secondary) !important;
+    }
+}
+
+// SKip to Content
+
+.skipLink {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    transform: translateX(-110%);
+    padding-inline: 1.5em;
+    min-height: 44px;
+    background-color: $dark_blue;
+    color: $white;
+    z-index: 1100;
+    font-size: clamp($caption, #{calc(1vw + .6rem)}, $body);
+    text-decoration: none;
+    font-weight: $medium;
+}
+
+.skipLink:focus {
+    transform: translateX(0);
+}
+
+// Text Field
+
+@include textInputField(
+    'input[type=text]'
+);
+
+@include textInputField(
+    'input[type=email]'
+);
+
+@include textInputField(
+    'textarea'
+);
+
+// Error Message for Failed Fetch
+.errorMessageContainer {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .errorMessage {
+        font-size: clamp(14px, #{calc(1vw + 1rem)}, $body);
+    }
+}

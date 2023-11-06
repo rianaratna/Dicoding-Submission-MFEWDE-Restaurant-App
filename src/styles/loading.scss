@@ -1,0 +1,108 @@
+loading-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: calc(15% / 2);
+    align-items: center;
+    background-color: rgba(#fff, .3);
+    font-family: $poppins_font;
+
+    .loader {
+        height: $loader-dot-size;
+        width: $loader-width;
+
+        &Dot {
+            animation: loader ease-in-out 3s infinite;
+            height: $loader-dot-size;
+            width: $loader-dot-size;
+            border-radius: 100%;
+            position: absolute;
+            background-color: $black;
+            border: 2px solid $light_grey;
+
+            &:first-child {
+                background-color: $dark_orange;
+                animation-delay: 0.5s;
+            }
+
+            &:nth-child(2) {
+                background-color: $orange;
+                animation-delay: 0.4s;
+            }
+            &:nth-child(3) {
+                background-color: $yellow;
+                animation-delay: 0.3s;
+            }
+            &:nth-child(4) {
+                background-color: $red;
+                animation-delay: 0.2s;
+            }
+            &:nth-child(5) {
+                background-color: $dark_blue;
+                animation-delay: 0.1s;
+            }
+            &:nth-child(6) {
+                background-color: $blue;
+                animation-delay: 0s;
+            }
+            
+        }
+        
+        &Text {
+            position: absolute;
+            top: 55%;
+            left: 0;
+            right: 0;
+            width: fit-content;
+            margin: auto;
+
+            &::after {
+                content: 'Loading';
+                font-weight: $bold;
+                font-size: clamp($small_caption, #{calc(1vw + 1rem)}, $body);
+                animation: text-loader 3s infinite;
+            }
+        }
+
+        @keyframes loader {
+            15% {
+                transform: translateX(0);
+            }
+
+            45% {
+                transform: translateX($loader-width - $loader-dot-size);
+            }
+
+            65% {
+                transform: translateX($loader-width - $loader-dot-size);
+            }
+
+            95% {
+                transform: translateX(0); 
+            }
+        }
+
+        @keyframes text-loader {
+            0% {
+                content: 'Loading';
+            }
+
+            25% {
+                content: 'Loading.';
+            }
+
+            50% {
+                content: 'Loading..';
+            }
+
+            75% {
+                content: 'Loading...';
+            }
+        }
+    }
+}

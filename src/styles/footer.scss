@@ -1,0 +1,95 @@
+footer {
+    // margin-top: clamp(4em, #{calc(3vw + 3rem)}, 6em);
+    // position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    color: rgba($white, .7);
+    background: url(../public/images/background-footer.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: clamp(2em, #{calc(1vw + 2rem)}, 3em) calc(15% / 2) 1em;
+
+    .logoImg {
+        display: none;
+        justify-content: flex-end;
+        align-items: center;
+
+        .background {
+            background-color: $blue;
+            padding: 1.2em 1.2em 1.2em 0;
+            border-radius: 1em;
+
+            img {
+                margin-inline-start: -1.2em;
+                background-color: $light_blue;
+                width: 8em;
+                height: 8em;
+                padding: .2em;
+                object-fit: contain;
+                object-position: center;
+                border-radius: .8em;
+            }
+        }
+    }
+
+    .copyright {
+        font-size: $small_caption;
+        text-align: center;
+        font-weight: $normal;
+        padding-block-start: clamp(3em, #{calc(1vw + 2rem)}, 4em);
+    }
+}
+
+subscribe-newsletter {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    .sub {
+        &NewsTitle {
+            font-size: $body;
+            margin-bottom: .5em;
+        }
+
+        &Desc {
+            font-size: $caption;
+        }
+    }
+
+    @include textInputContainer(
+        '.subNewsInput',
+        '#email',
+        $dark_blue,
+        $white,
+        $white
+    );
+
+    .action {
+        display: flex;
+        justify-content: space-between;
+        grid-template-columns: fr 1fr;
+        gap: .8em;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    footer {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 6.5fr 1fr;
+        height: fit-content;
+        row-gap: 2.5em;
+
+        .logoImg {
+            display: flex;
+        }
+    
+        .copyright {
+            grid-column-start: 1;
+            grid-column-end: 3;
+            height: fit-content;
+            padding-top: 0;
+        }
+    }
+}

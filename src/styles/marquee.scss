@@ -1,0 +1,18 @@
+marquee-container {
+    position: relative;
+    background-color: $orange;
+    padding-block: 
+        clamp(1.2em, #{calc(2vw + .5rem)}, 2.8em) 
+        clamp(.8em, #{calc(1vw + .5rem)}, 2.2em);
+
+    .marqueeSet {
+        display: flex;
+        gap: 3em;
+
+        li {
+            list-style-type: none;
+            color: $white;
+            font-size: clamp($caption, #{calc(1vw + .6rem)}, $body);
+        }
+    }
+}

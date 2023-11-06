@@ -1,0 +1,122 @@
+rec-food-list {
+    margin-top: clamp(4em,calc(3vw + 3rem),6em);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: clamp(1em, #{calc(1.5vw + .5rem)}, 2em);
+    background-image: url(../public/images/blob.png);
+
+    .recFoodTitle {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin-bottom: 1em;
+        color: $dark_orange;
+    }
+
+    @media screen and (min-width: 700px) {
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .recFoodTitle {
+            grid-column-end: 3;
+            margin: auto 0;
+        }
+    }
+}
+
+rec-food-item {
+
+    &[tabindex="0"]:focus .foodContent{
+        transform: rotateY(180deg) !important;
+        transition: transform 500ms !important;
+    }
+
+    .foodItem {
+        position: static;
+        width: 100%;
+        height: 13em;
+
+        .foodContent {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 1s;
+            transform-style: preserve-3d;
+            border-radius: 1em;
+            box-shadow: 0 0 15px rgba(0,0,0,.3);
+            
+            &.clickedFlip {
+                transform: rotateY(180deg);
+                transition: transform 500ms;
+            }
+        }
+
+        #front, #back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 1em;
+            backface-visibility: hidden;
+        }
+
+        #front {
+            .foodImg {
+                width: 100%;
+                height: 100%;
+                border-radius: 1em;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            .nextBtn {
+                position: relative;
+                left: 10%;
+                bottom: 30%;
+            }
+        }
+
+        #back {
+            padding: clamp(1em, #{calc(1vw + .8rem)}, 2em);
+            background: $orange;
+            transform: rotateY(180deg);
+            color: $black;
+
+            @media screen and (max-width: 319px) {
+                overflow-y: auto;
+            }
+
+            .foodName {
+                font-size: clamp(.75rem, #{calc(1vw + var(--font-size-calc, .5rem))}, var(--max-font-size, $body));
+                text-transform: uppercase;
+                margin-bottom: clamp(.5em, #{calc(1vw + .3em)}, 1em);
+            }
+    
+            .foodDesc {
+                font-size: clamp($small_caption, #{calc(1vw + var(--font-size-calc, .3rem))}, var(--max-font-size, $body_small));
+            }
+        }
+
+        @media screen and (min-width: 500px) {
+            &:hover .foodContent {
+                transform: rotateY(180deg);
+                transition: transform 500ms;
+            }
+
+            .nextBtn {
+                display: none;
+            }
+
+            .foodName {
+                --font-size-calc: .7rem !important;
+            }
+
+            .foodDesc {
+                --font-size-calc: .4rem !important;
+            }
+        }
+    }
+
+    @media screen and (min-width: 700px) {
+        .foodItem {
+            height: 18em !important;
+        }
+    }
+}
