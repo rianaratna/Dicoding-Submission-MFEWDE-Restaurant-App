@@ -42,7 +42,7 @@ const Detail = {
                     },
                 });
 
-                FormReviewInitiator.init({
+                await FormReviewInitiator.init({
                     reviewContainer: document.querySelector('.othersReviewContainer'),
                     form: document.querySelector('.addReviewForm'),
                     restaurantId: this._detail.id,
