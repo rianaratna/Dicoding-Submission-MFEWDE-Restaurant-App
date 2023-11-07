@@ -1,5 +1,6 @@
 import FoodData from '../../data/FOOD.json';
 import TheRestaurantDbSource from '../../data/therestaurantdb-source.js';
+import { createErrorMessageTemplate } from '../templates/template-creator';
 
 // Component
 import '../../component/header/jumbotron';
@@ -33,7 +34,7 @@ const Home = {
             const result = await TheRestaurantDbSource.listOfRestaurant();
             restaurantList.restaurants = result;
         } catch (error) {
-            ;
+            $('.content').innerHTML = createErrorMessageTemplate('The request is failed. Please reload the page');
         }
     },
 };
