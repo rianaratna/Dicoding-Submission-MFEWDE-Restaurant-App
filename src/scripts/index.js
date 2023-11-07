@@ -32,7 +32,7 @@ window.addEventListener('hashchange', () => {
     OtherConfiguration();
 });
 
-window.addEventListener('load', async () => {
+window.addEventListener('load', () => {
     app.renderPage();
     swRegister();
     OtherConfiguration();
