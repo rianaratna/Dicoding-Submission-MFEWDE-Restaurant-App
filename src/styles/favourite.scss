@@ -24,5 +24,20 @@
 // Favourite Container
 .favouriteSection {
     margin-top: clamp(2em, #{calc(2vw + 1em)}, 5em);
-    padding-inline: calc(15% / 2);
+
+    .favouriteTitle {
+        padding-inline: calc(15% / 2);
+    }
+
+    restaurant-list {
+        margin-top: 2em !important;
+    }
+}
+
+// Empty Favourite Message
+.emptyFavouriteMessage {
+    margin-top: 20px;
+    text-align: center;
+    font-size: clamp(12px, calc(1vw + .8rem), $body); 
+    color: black;
 }
