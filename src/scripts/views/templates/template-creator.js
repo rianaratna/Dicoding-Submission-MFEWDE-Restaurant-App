@@ -1,5 +1,5 @@
 const createLikeButtonTemplate = () => `
-    <button aria-label="like this restaurant" id="likeButton" class="like">
+    <button aria-label="like this restaurant" id="likeButton" class="like" tabindex="0">
         <span class="material-symbols-outlined">
             favorite
         </span>
@@ -7,7 +7,7 @@ const createLikeButtonTemplate = () => `
 `;
 
 const createLikedButtonTemplate = () => `
-    <button aria-label="unlike this restaurant" id="likeButton" class="like">
+    <button aria-label="unlike this restaurant" id="likeButton" class="like" tabindex="0">
         <span class="material-symbols-sharp">
             favorite
         </span>
@@ -20,16 +20,16 @@ const createFormReviewTemplate = (name, review, date) => `
             <span class="material-symbols-rounded othersProfilePic">
                 person
             </span>
-            <h3 class="othersName">${name}</h3>
+            <h3 class="othersName" tabindex="0">${name}</h3>
         </div>
-        <p class="othersReview">${review}</p>
-        <h5 class="othersReviewDate">${date}</h5>
+        <p class="othersReview" tabindex="0">${review}</p>
+        <h5 class="othersReviewDate" tabindex="0">${date}</h5>
     </div>
 `;
 
 const createErrorMessageTemplate = (message) => `
     <div class="errorMessageContainer">
-        <p class="errorMessage">${message}</p>
+        <p class="errorMessage" tabindex="0">${message}</p>
     </div>
 `;
 
