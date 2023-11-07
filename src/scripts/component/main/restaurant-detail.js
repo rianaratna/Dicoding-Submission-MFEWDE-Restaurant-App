@@ -16,42 +16,44 @@ class RestaurantDetail extends HTMLElement {
         this.innerHTML = `
             <img src="${CONFIG.BASE_IMAGE_URL.MEDIUM + this._detail.pictureId}" alt="${this._detail.name}" class="restaurantImg">
             <div class="detailContainer">
-                <div class="titleContainer">
-                    <h3 class="restaurantCity" tabindex="0" aria-label="located in ${this._detail.city}">${this._detail.city}</h3>
-                    <h1 class="restaurantName" tabindex="0" aria-label="restaurant ${this._detail.name}">${this._detail.name}</h1>
-                </div>
-                <div class="aboutRestaurant">
-                    <div class="ratingAndAddress">
-                        <div class="restaurantRating">
-                            <span class="material-symbols-rounded starIcon">
-                                star
-                            </span>
-                            <div class="ratingWrapper">
-                                <h2 class="ratingTitle">Rating</h2>
-                                <h3 class="ratingScale" tabindex="0" aria-label="rating ${this._detail.rating}">${this._detail.rating}</h3>
-                            </div>
-                        </div>
-                        <div class="restaurantAddress">
-                            <span class="material-symbols-sharp locationIcon">
-                                location_on
-                            </span>
-                            <div class="addressWrapper">
-                                <h2 class="addressTitle">Address</h4>
-                                <h3 class="addressName" tabindex="0">${this._detail.address}</h3>
-                            </div>
-                        </div>
+                <div class="titleAndAboutRestaurantSection">
+                    <div class="titleContainer">
+                        <h3 class="restaurantCity" tabindex="0" aria-label="located in ${this._detail.city}">${this._detail.city}</h3>
+                        <h1 class="restaurantName" tabindex="0" aria-label="restaurant ${this._detail.name}">${this._detail.name}</h1>
                     </div>
-                    <section class="restaurantDescSection">
-                        <h2>Description</h2>
-                        <p class="restaurantDesc" tabindex="0">${this._detail.description}</p>
-                    </section>
+                    <div class="aboutRestaurant">
+                        <div class="ratingAndAddress">
+                            <div class="restaurantRating">
+                                <span class="material-symbols-rounded starIcon">
+                                    star
+                                </span>
+                                <div class="ratingWrapper">
+                                    <h2 class="ratingTitle" tabindex="0">Rating</h2>
+                                    <h3 class="ratingScale" tabindex="0" ${this._detail.rating}">${this._detail.rating}</h3>
+                                </div>
+                            </div>
+                            <div class="restaurantAddress">
+                                <span class="material-symbols-sharp locationIcon">
+                                    location_on
+                                </span>
+                                <div class="addressWrapper">
+                                    <h2 class="addressTitle" tabindex="0">Address</h4>
+                                    <h3 class="addressName" tabindex="0">${this._detail.address}</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <section class="restaurantDescSection">
+                            <h2 tabindex="0">Description</h2>
+                            <p class="restaurantDesc" tabindex="0">${this._detail.description}</p>
+                        </section>
+                    </div>
                 </div>
 
                 <section class="restaurantMenu">
-                    <h2 class="menuTitle secondaryTitle">Menu</h2>
+                    <h2 class="menuTitle secondaryTitle" tabindex="0">Menu</h2>
                     <div class="tabButton">
-                        <button href="" class="foodsCategory">Foods</button>
-                        <button href="" class="drinksCategory">Drinks</button>
+                        <button href="" class="foodsCategory" aria-label="Foods Category">Foods</button>
+                        <button href="" class="drinksCategory" aria-label="Drinks Category">Drinks</button>
                         <span class="rectangleToFill"></span>
                     </div>
                     <div class="menuItemContainer">
@@ -59,7 +61,7 @@ class RestaurantDetail extends HTMLElement {
                             ${this._detail.menus.foods.map((food) => `
                                 <div class="foodItemList">
                                     <img src="./images/twemoji_pot-of-food.svg" alt="" class="foodIcon">
-                                    <h4 class="foodItemName">${food.name}</h4>
+                                    <h4 class="foodItemName" tabindex="0">${food.name}</h4>
                                 </div>
                             `)}
                         </div>
@@ -67,7 +69,7 @@ class RestaurantDetail extends HTMLElement {
                             ${this._detail.menus.drinks.map((drink) => `
                                 <div class="drinkItemList">
                                     <img src="./images/emojione_tropical-drink.svg" alt="" class="drinkIcon">
-                                    <h4 class="drinkItemName">${drink.name}</h4>
+                                    <h4 class="drinkItemName" tabindex="0">${drink.name}</h4>
                                 </div>
                             `)}
                         </div>
@@ -75,11 +77,11 @@ class RestaurantDetail extends HTMLElement {
                 </section>
 
                 <section class="restaurantReviews">
-                    <h2 class="reviewTitle secondaryTitle">Customer Reviews</h2>
+                    <h2 class="reviewTitle secondaryTitle" tabindex="0">Customer Reviews</h2>
                     <div class="addReview">
                         <div class="reviewTitleContainer">
-                            <h4 class="addReviewSubTitle">What do you think about this restaurant?</h4>
-                            <h3 class="addReviewTitle">Add your review to help others</h3>
+                            <h4 class="addReviewSubTitle" tabindex="0">What do you think about this restaurant?</h4>
+                            <h3 class="addReviewTitle" tabindex="0">Add your review to help others</h3>
                         </div>
                         <form class="addReviewForm">
                             <div class="addNameSection">
@@ -92,14 +94,14 @@ class RestaurantDetail extends HTMLElement {
                                 <span class="material-symbols-outlined">
                                     description
                                 </span>
-                                <textarea name="customer_review" id="review" rows="1" placeholder="Enter your review"></textarea>
+                                <textarea name="customer_review" id="review" rows="1" placeholder="Enter your review" aria-label="Enter your review"></textarea>
                             </div>
                             <button type="submit" class="submitReview textButton">
                                 Send Review
                             </button>
                         </form>
                     </div>
-                    <div class="othersReviewContainer">
+                    <div class="othersReviewContainer" tabindex="0" aria-label="Others' Reviews">
                         ${this._detail.customerReviews.map((customer) => createFormReviewTemplate(customer.name, customer.review, customer.date))}
                     </div>
                 </section>
