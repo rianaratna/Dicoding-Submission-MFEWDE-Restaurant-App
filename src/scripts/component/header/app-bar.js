@@ -15,11 +15,11 @@ class AppBar extends HTMLElement {
     render() {
         this.innerHTML = `
             <div class="hero">
-                <a id="hamburger" class="iconButton">
+                <button id="hamburger" class="iconButton" tabindex="0">
                     <span class="material-symbols-outlined">
                         menu
                     </span>
-                </a>
+                </button>
                 <div class="logoContainer">
                     <img src="../../../images/logo.png" alt="">
                     <h1 class="appName">Local Foodie Map</h1>
@@ -29,22 +29,28 @@ class AppBar extends HTMLElement {
             <nav id="drawer" class="navigationMenu">
                 <ul class="navList">
                     <li>
-                        <a href="#/home" tabindex="-1">Home</a>
+                        <a href="#/home">Home</a>
                     </li>
                     <li>
-                        <a href="#/favourite" tabindex="-1">Favourite</a>
+                        <a href="#/favourite">Favourite</a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/rianaratna" tabindex="-1">About Us</a>
+                        <a href="https://www.linkedin.com/in/rianaratna">About Us</a>
                     </li>
                 </ul>
-                <button aria-label="close the navigation" class="closeButton iconButton" tabindex="-1">
+                <button aria-label="close the navigation" class="closeButton iconButton">
                     <span class="material-symbols-outlined">
                         close
                     </span>
                 </button>
             </nav>
         `;
+
+        if (window.matchMedia('(max-width: 499px)').matches) {
+            $('.navigationMenu a, .navigationMenu button').attr('tabindex', '-1');
+        } else {
+            $('.navigationMenu a, .navigationMenu button').removeAttr('tabindex');
+        }
     }
 }
 
