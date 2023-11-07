@@ -12,9 +12,9 @@ const Detail = {
     async render() {
         return `
             <div class="content">
+                <loading-indicator></loading-indicator>
                 <restaurant-detail></restaurant-detail>
                 <div id="likeButtonContainer"></div>
-                <loading-indicator></loading-indicator>
             </div>
         `;
     },
