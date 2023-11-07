@@ -16,11 +16,13 @@ restaurant-detail {
             padding-inline: calc(15% / 2);
         }
 
-        .titleContainer {
-            padding-top: clamp(1em, #{calc(3vw + 2rem)}, 5em);
+        .titleAndAboutRestaurantSection {
             background-color: $orange;
-            border-radius: 2em 2em 0 0;
+            border-radius: 2em 2em 0rem 0rem;
+            padding-top: clamp(1em, #{calc(3vw + 2rem)}, 5em);
+        }
 
+        .titleContainer {
             .restaurant{
                 &City {
                     font-size: clamp($caption, #{calc(1vw + .5rem)}, $title_secondary);
@@ -44,7 +46,6 @@ restaurant-detail {
             margin-top: -1px;
             display: grid;
             gap: 2em;
-            background-color: $orange;
             padding-block-start: 2em;
             padding-block-end: clamp(1em, #{calc(3vw + 2rem)}, 5em);
 
@@ -106,6 +107,8 @@ restaurant-detail {
 
                 .foodsCategory,
                 .drinksCategory {
+                    min-width: 44px !important;
+                    min-height: 44px !important;
                     border: 0;
                     background-color: transparent;
                     font-family: $poppins_font;
@@ -133,8 +136,9 @@ restaurant-detail {
                 }
 
                 .rectangleToFill {
+                    margin: auto;
                     width: 100%;
-                    height: 20px;
+                    height: 25px;
                     background-color: $orange;
                 }
             }
@@ -339,6 +343,21 @@ restaurant-detail {
         .othersReviewContainer {
             display: grid;
             grid-template-columns: 1fr 1fr;
+        }
+    }
+    
+    @media screen and (min-width: 1200px) {
+        .titleContainer,
+        .aboutRestaurant,
+        .restaurantMenu,
+        .restaurantReviews {
+            max-width: 1200px !important;
+            margin-inline: auto !important;
+            padding-inline: 0;
+        }
+
+        .othersReviewContainer {
+            grid-template-columns: 1fr 1fr 1fr;
         }
     }
 }
