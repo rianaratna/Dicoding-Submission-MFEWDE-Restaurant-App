@@ -7,13 +7,13 @@ class LoadingIndicator extends HTMLElement {
     render() {
         this.innerHTML = `
         <div class="loader">
-            <div class="loaderDot" ></div>
-            <div class="loaderDot" ></div>
-            <div class="loaderDot" ></div>
-            <div class="loaderDot" ></div>
-            <div class="loaderDot" ></div>
-            <div class="loaderDot" ></div>
-            <div class="loaderText"></div>
+            <div class="loaderDot"></div>
+            <div class="loaderDot"></div>
+            <div class="loaderDot"></div>
+            <div class="loaderDot"></div>
+            <div class="loaderDot"></div>
+            <div class="loaderDot"></div>
+            <div class="loaderText" tabindex="0" aria-label="Page is On Loading"></div>
         </div>
         `;
     }
