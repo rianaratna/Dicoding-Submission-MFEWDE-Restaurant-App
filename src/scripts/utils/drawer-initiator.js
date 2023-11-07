@@ -29,15 +29,15 @@ const DrawerInitiator = {
     },
 
     _addtabIndexAtContentInsideDrawer(event, menuList, closeButton) {
-        event.stopPropagation();
         $(menuList).removeAttr('tabindex');
         $(closeButton).removeAttr('tabindex');
+        event.stopPropagation();
     },
 
     _removetabIndexAtContentInsideDrawer(event, menuList, closeButton) {
-        event.stopPropagation();
         $(menuList).attr('tabindex', '-1');
         $(closeButton).attr('tabindex', '-1');
+        event.stopPropagation();
     },
 };
 
