@@ -21,12 +21,6 @@ class RestaurantList extends HTMLElement {
             const restaurantItem = document.createElement('restaurant-item');
             restaurantItem.restaurant = restaurant;
             this.appendChild(restaurantItem);
-
-            // View Detail Button On Click
-
-            $(`#${restaurant.id} .viewDetailBtn`).on('click', () => {
-                $(`#${restaurant.id} .detailSection`).removeAttr('hidden');
-            });
         });
     }
 }
