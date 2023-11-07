@@ -43,6 +43,12 @@ class App {
         }
         this._content.innerHTML = await page.render();
         await page.afterRender();
+
+        const skipLink = document.querySelector('.skipLink');
+        skipLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            document.querySelector('#mainContent').focus();
+        })
     }
 }
 
