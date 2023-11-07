@@ -87,9 +87,11 @@ restaurant-list {
                     }
                 }
 
-                .viewDetailBtn a {
+                .viewDetailBtn {
                     text-decoration: none;
                     color: $white;
+                    min-width: 44px !important;
+                    min-height: 44px !important;
                 }
             }
 
