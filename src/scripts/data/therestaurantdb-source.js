@@ -1,5 +1,4 @@
 import API_ENDPOINT from '../globals/api-endpoint';
-import CONFIG from '../globals/config';
 
 class TheRestaurantDbSource {
     static async listOfRestaurant() {
@@ -9,7 +8,7 @@ class TheRestaurantDbSource {
     }
 
     static async detailRestaurant(id) {
-        const response = await fetch(API_ENDPOINT.DETAIL(id))
+        const response = await fetch(API_ENDPOINT.DETAIL(id));
         const responseJson = await response.json();
         return responseJson.restaurant;
     }
