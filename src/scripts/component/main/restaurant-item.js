@@ -27,10 +27,10 @@ class RestaurantItem extends HTMLElement {
                             </div>
                         </div>
                         <p class="restaurantDesc" tabindex="0">${this._restaurant.description}</p>
-                        <a aria-label="View the detail of ${this._restaurant.name}" class="viewDetailBtn textButton"    tabindex="0" href="/#/detail/${this._restaurant.id}">View detail ></a>
+                        <a aria-label="View the detail of ${this._restaurant.name}" class="viewDetailBtn textButton" tabindex="0" href="/#/detail/${this._restaurant.id}">View detail ></a>
                     </div>
                     <div class="restaurantImgSection">
-                        <img src="${CONFIG.BASE_IMAGE_URL.MEDIUM + this._restaurant.pictureId}" alt"${this._restaurant.name}" class="restaurantPic">
+                        <img src="${CONFIG.BASE_IMAGE_URL.MEDIUM + this._restaurant.pictureId}" alt="${this._restaurant.name}" class="restaurantPic">
                     </div>
                 </div>
             </section>

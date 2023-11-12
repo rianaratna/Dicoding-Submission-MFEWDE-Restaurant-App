@@ -48,7 +48,14 @@ class App {
         skipLink.addEventListener('click', (event) => {
             event.preventDefault();
             document.querySelector('#mainContent').focus();
-        })
+        });
+
+        skipLink.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                document.querySelector('#mainContent').focus();
+            }
+        });
     }
 }
 
