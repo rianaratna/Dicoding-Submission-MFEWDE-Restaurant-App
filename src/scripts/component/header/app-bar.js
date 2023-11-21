@@ -21,7 +21,7 @@ class AppBar extends HTMLElement {
                     </span>
                 </button>
                 <div class="logoContainer">
-                    <img src="../../../images/logo.png" alt="">
+                    <img data-src="../../../images/logo.png" alt="" class="lazyload">
                     <h1 class="appName">Local Foodie Map</h1>
                 </div>
             </div>

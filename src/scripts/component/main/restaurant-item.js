@@ -30,7 +30,7 @@ class RestaurantItem extends HTMLElement {
                         <a aria-label="View the detail of ${this._restaurant.name}" class="viewDetailBtn textButton" tabindex="0" href="/#/detail/${this._restaurant.id}">View detail ></a>
                     </div>
                     <div class="restaurantImgSection">
-                        <img src="${CONFIG.BASE_IMAGE_URL.MEDIUM + this._restaurant.pictureId}" alt="${this._restaurant.name}" class="restaurantPic">
+                        <img data-src="${CONFIG.BASE_IMAGE_URL.MEDIUM + this._restaurant.pictureId}" alt="${this._restaurant.name}" class="restaurantPic lazyload">
                     </div>
                 </div>
             </section>

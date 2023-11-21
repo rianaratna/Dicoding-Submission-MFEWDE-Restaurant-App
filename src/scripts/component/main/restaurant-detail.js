@@ -14,7 +14,7 @@ class RestaurantDetail extends HTMLElement {
 
     async render() {
         this.innerHTML = `
-            <img src="${CONFIG.BASE_IMAGE_URL.MEDIUM + this._detail.pictureId}" alt="${this._detail.name}" class="restaurantImg">
+            <img data-src="${CONFIG.BASE_IMAGE_URL.MEDIUM + this._detail.pictureId}" alt="${this._detail.name}" class="restaurantImg lazyload">
             <div class="detailContainer">
                 <div class="titleAndAboutRestaurantSection">
                     <div class="titleContainer">
@@ -60,7 +60,7 @@ class RestaurantDetail extends HTMLElement {
                         <div id="foods" class="foodItemContainer">
                             ${this._detail.menus.foods.map((food) => `
                                 <div class="foodItemList">
-                                    <img src="./images/twemoji_pot-of-food.svg" alt="" class="foodIcon">
+                                    <img data-src="./images/twemoji_pot-of-food.svg" alt="" class="foodIcon lazyload">
                                     <h4 class="foodItemName" tabindex="0">${food.name}</h4>
                                 </div>
                             `)}
@@ -68,7 +68,7 @@ class RestaurantDetail extends HTMLElement {
                         <div id="drinks" class="drinkItemContainer">
                             ${this._detail.menus.drinks.map((drink) => `
                                 <div class="drinkItemList">
-                                    <img src="./images/emojione_tropical-drink.svg" alt="" class="drinkIcon">
+                                    <img data-src="./images/emojione_tropical-drink.svg" alt="" class="drinkIcon lazyload">
                                     <h4 class="drinkItemName" tabindex="0">${drink.name}</h4>
                                 </div>
                             `)}

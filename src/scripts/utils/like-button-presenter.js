@@ -1,9 +1,10 @@
-import FavouriteRestaurantIdb from '../data/favourite-restaurant-idb';
-import { createLikeButtonTemplate, createLikedButtonTemplate } from '../views/templates/template-creator';
+import $ from 'jquery';
+import { createLikeRestaurantButtonTemplate, createUnlikeRestaurantButtonTemplate } from '../views/templates/template-creator';
 
-const LikeButtonInitiator = {
-    async init({ likeButtonContainer, restaurant }) {
+const LikeButtonPresenter = {
+    async init({ likeButtonContainer, favoriteRestaurant, restaurant }) {
         this._likeButtonContainer = likeButtonContainer;
+        this._favoriteRestaurant = favoriteRestaurant;
         this._restaurant = restaurant;
 
         await this._renderButton();
@@ -21,16 +22,16 @@ const LikeButtonInitiator = {
     },
 
     async _isRestaurantExist(id) {
-        const restaurant = await FavouriteRestaurantIdb.getRestaurant(id);
+        const restaurant = await this._favoriteRestaurant.getRestaurant(id);
         return !!restaurant;
     },
 
     _renderLike() {
-        this._likeButtonContainer.innerHTML = createLikeButtonTemplate();
+        this._likeButtonContainer.innerHTML = createLikeRestaurantButtonTemplate();
 
         const likeButton = document.querySelector('#likeButton');
         likeButton.addEventListener('click', async () => {
-            await FavouriteRestaurantIdb.putRestaurant(this._restaurant);
+            await this._favoriteRestaurant.putRestaurant(this._restaurant);
             this._renderButton();
             alert(`${this._restaurant.name} is succesfully added to Favourites`);
         });
@@ -38,11 +39,11 @@ const LikeButtonInitiator = {
     },
 
     _renderLiked() {
-        this._likeButtonContainer.innerHTML = createLikedButtonTemplate();
+        this._likeButtonContainer.innerHTML = createUnlikeRestaurantButtonTemplate();
 
         const likeButton = document.querySelector('#likeButton');
         likeButton.addEventListener('click', async () => {
-            await FavouriteRestaurantIdb.deleteRestaurant(this._restaurant.id);
+            await this._favoriteRestaurant.deleteRestaurant(this._restaurant.id);
             this._renderButton();
             alert(`${this._restaurant.name} is succesfully removed from Favourites`);
         });
@@ -56,4 +57,4 @@ const LikeButtonInitiator = {
     },
 };
 
-export default LikeButtonInitiator;
+export default LikeButtonPresenter;

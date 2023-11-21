@@ -1,4 +1,4 @@
-const createLikeButtonTemplate = () => `
+const createLikeRestaurantButtonTemplate = () => `
     <button aria-label="like this restaurant" id="likeButton" class="like" tabindex="0">
         <span class="material-symbols-outlined">
             favorite
@@ -6,7 +6,7 @@ const createLikeButtonTemplate = () => `
     </button>
 `;
 
-const createLikedButtonTemplate = () => `
+const createUnlikeRestaurantButtonTemplate = () => `
     <button aria-label="unlike this restaurant" id="likeButton" class="like" tabindex="0">
         <span class="material-symbols-sharp">
             favorite
@@ -34,8 +34,8 @@ const createErrorMessageTemplate = (message) => `
 `;
 
 export {
-    createLikeButtonTemplate,
-    createLikedButtonTemplate,
+    createLikeRestaurantButtonTemplate,
+    createUnlikeRestaurantButtonTemplate,
     createFormReviewTemplate,
     createErrorMessageTemplate,
 };

@@ -4,10 +4,17 @@ import '../styles/main.scss';
 import App from './views/app';
 import cssSetting from './views/css-setting';
 import swRegister from './utils/sw-register';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 import './component/header/app-bar';
 import './component/footer/subscribe-newsletter';
 import './component/main/restaurant-detail';
+
+// eslint-disable-next-line no-unused-vars
+const START = 10;
+// eslint-disable-next-line no-unused-vars
+const NUMBER_OF_IMAGES = 100;
 
 const app = new App({
     logo: document.querySelector('.logoContainer'),

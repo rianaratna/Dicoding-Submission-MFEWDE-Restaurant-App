@@ -1,8 +1,9 @@
 import UrlParser from '../../routes/url-parser';
 import TheRestaurantDbSource from '../../data/therestaurantdb-source';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
+import LikeButtonInitiator from '../../utils/like-button-presenter';
 import FormReviewInitiator from '../../utils/form-review-initiator';
 import { createErrorMessageTemplate } from '../templates/template-creator';
+import FavouriteRestaurantIdb from '../../data/favourite-restaurant-idb';
 
 // Component
 import '../../component/main/restaurant-detail';
@@ -32,6 +33,7 @@ const Detail = {
 
                 await LikeButtonInitiator.init({
                     likeButtonContainer: document.querySelector('#likeButtonContainer'),
+                    favoriteRestaurant: FavouriteRestaurantIdb,
                     restaurant: {
                         id: restaurant.id,
                         name: restaurant.name,

@@ -13,7 +13,7 @@ class RecommendationFoodItem extends HTMLElement {
             <section id="${this._food.id}" class="foodItem card">
                 <div class="foodContent">
                     <div id="front">
-                        <img src="${this._food.image}" alt="${this._food.name}" class="foodImg">
+                        <img data-src="${this._food.image}" alt="${this._food.name}" class="foodImg lazyload">
                         <div class="nextBtn filledIconButton">
                             <span class="material-symbols-outlined">
                                 chevron_right

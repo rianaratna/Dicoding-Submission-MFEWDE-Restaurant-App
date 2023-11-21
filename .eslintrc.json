@@ -19,6 +19,7 @@
         "linebreak-style": 0,
         "indent": "off",
         "import/extensions": 0,
-        "no-useless-constructor": "off"
+        "no-useless-constructor": "off",
+        "no-undef": "off"
     }
 }
