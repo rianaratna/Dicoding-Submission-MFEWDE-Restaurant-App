@@ -25,7 +25,7 @@ module.exports = merge(common, {
         test: /\.svg$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/img/[name].[contenthash][ext]',
+          filename: 'assets/[name].[contenthash][ext]',
         },
       },
     ],
